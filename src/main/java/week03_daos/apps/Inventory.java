@@ -1,5 +1,6 @@
 package week03_daos.apps;
 
+import week03_daos.persistence.ProductDao;
 import week03_daos.persistence.ProductDaoImpl;
 
 public class Inventory {
@@ -14,7 +15,8 @@ public class Inventory {
         double buyPrice = 1.29;
         double msrp = 5.99;
 
-        boolean added = ProductDaoImpl.addProduct(productCode, productName, productLine, productScale, productVendor,
+        ProductDao productDao = new ProductDaoImpl();
+        boolean added = productDao.addProduct(productCode, productName, productLine, productScale, productVendor,
                 productDescription, quantityInStock, buyPrice, msrp);
 
         if(added){

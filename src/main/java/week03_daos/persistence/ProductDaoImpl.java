@@ -6,17 +6,18 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductDaoImpl {
-    public static boolean addProduct(String productCode, String productName,
+public class ProductDaoImpl implements ProductDao {
+    private String driver = "com.mysql.cj.jdbc.Driver";
+    private String url = "jdbc:mysql://127.0.0.1:3306/classicmodels";
+    private String username = "root";
+    private String password = "";
+
+    public boolean addProduct(String productCode, String productName,
                                      String productLine, String productScale,
                                      String productVendor, String productDescription,
                                      int quantityInStock, double buyPrice, double msrp){
         // Create variables to hold database details
-        // This supports clearer intention in code, and avoids "magic" numbers/strings
-        String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://127.0.0.1:3306/classicmodels";
-        String username = "root";
-        String password = "";
+        // This supports clearer intention in code, and avoids "magic" numbers/string
 
         try {
             // Load driver - pull in library of Java code to work with MySQL database
