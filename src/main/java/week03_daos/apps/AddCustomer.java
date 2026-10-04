@@ -15,7 +15,8 @@ public class AddCustomer {
 
         while (true) {
             System.out.print("Enter a customer ID number: ");
-            customerNumber = Integer.parseInt(kb.nextLine());
+            customerNumber = kb.nextInt();
+            kb.nextLine();
 
             Customer existingCustomer = customerDao.findCustomerById(customerNumber);
 
@@ -26,6 +27,7 @@ public class AddCustomer {
 
             System.out.println("This customer ID is already in use. Try again.");
         }
+
 
         System.out.print("Customer name: ");
         String customerName = kb.nextLine();
