@@ -1,8 +1,8 @@
 package week03_daos.persistence;
 
-import week02_databases.entities.OrderDetails;
+
 import week03_daos.entities.Customer;
-import week03_daos.entities.Product;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
